@@ -1,0 +1,26 @@
+{
+  "name": "crayfish",
+  "version": "2.0.0",
+  "description": "前端配置管理系统",
+  "private": true,
+  "faas": {
+    "domain": "crayfish",
+    "public": "docs",
+    "description": "crayfish 文档",
+    "author_name": "柳荣一",
+    "author_email": "rongyi.liu@ele.me",
+    "notice": [ "rongyi.liu@ele.me" ]
+  },
+  "reciperConfig": {
+    "darkColor": "#383129",
+    "normalColor": "#655",
+    "primaryColor": "#d71518",
+    "logoUrl": "//fuss10.elemecdn.com/3/99/f5532e2374dcb65a441c71d6111f7jpeg.jpeg",
+    "languages": [ "json", "javascript", "xml" ],
+    "items": [
+      { "text": "项目简介", "href": "/intro/" },
+      { "text": "操作手册", "href": "/manual/" },
+      { "text": "控制台", "href": "https://crayfish.elenet.me", "target": "_blank" }
+    ]
+  }
+}

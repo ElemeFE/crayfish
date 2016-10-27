@@ -1,0 +1,9 @@
+.*
+*.swp
+*.log
+node_modules
+dist
+/fe.crayfish
+!.gitignore
+!.eslintrc
+/tempdata

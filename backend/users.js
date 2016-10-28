@@ -16,7 +16,7 @@ module.exports = [{
   ]
 },{
   "name": "sofish",
-  "id": 1,
+  "id": 2,
   "email": "sofish@ele.me",
   "password": "password",
   "permissions": [

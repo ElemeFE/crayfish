@@ -13,7 +13,6 @@ module.exports = class {
     let { domain } = ctx.params;
     if (publishlog[0].domain !== domain) throw { status: 400, name: 'DOMAIN_NOT_MATCH', message: '域名不匹配' };
     let list = await ctx.sql('SELECT `path`, `name`, `value` FROM `publishdata` WHERE `publish_id` = ?', [ id ]);
-    console.log(list);
     ctx.body = await PublishController.publish(ctx, domain, list);
   }
 

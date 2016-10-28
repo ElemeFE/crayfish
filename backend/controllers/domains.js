@@ -12,7 +12,6 @@ module.exports = class {
 
   @authorize(['ADMIN'])
   static async post(ctx) {
-    console.log('dddd');
     let { domain } = ctx.request.body;
     try {
       await ctx.sql.commit({
@@ -21,7 +20,6 @@ module.exports = class {
       ctx.status = 204;
       ctx.body = '';
     } catch (error) {
-      console.log(error);
       if (error.code === 'ER_DUP_ENTRY') {
         throw { status: 400, name: 'DUP', message: '记录已存在' };
       }

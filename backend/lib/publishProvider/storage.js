@@ -4,7 +4,7 @@ const mkdirp = promisify(require('mkdirp'));
 const fs = require('fs');
 const writeFile = promisify(fs.writeFile);
 
-const publishMockRoot = require('../config').publishMockRoot || '';
+const publishMockRoot = require('../../config').publishMockRoot || '';
 
 exports.put = (key, data, mime) => {
   let filePath = path.join(publishMockRoot, key) + '.crayfish';

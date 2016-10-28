@@ -1,8 +1,7 @@
 const authorize = require('../lib/authorize');
-const storage = require('../lib/storage');
 const squash = require('./squash').squash;
 
-const publishProviders = [storage];
+const publishProviders = require('../lib/publishProvider');
 
 module.exports = class {
   static url = '/cdn/:domain/publish';

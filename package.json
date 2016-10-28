@@ -1,4 +1,6 @@
 {
+  "name": "crayfish",
+  "description": "前端配置管理系统",
   "reciperConfig": {
     "darkColor": "#383129",
     "normalColor": "#655",

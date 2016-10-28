@@ -11,7 +11,7 @@
     </script>
     <script src="//github.elemecdn.com/uglifyjs!YanagiEiichi/reciper/0.1.3/index.es5.js"></script>
     <script>
-      fetch('/package.json').then(function(response) { return response.json(); }).then(function(pkg) {
+      fetch('package.json').then(function(response) { return response.json(); }).then(function(pkg) {
         var config = pkg.reciperConfig;
         config.name = pkg.name;
         config.description = pkg.description;

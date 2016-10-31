@@ -9,9 +9,10 @@
       if (!window.Promise) document.write('<script src="//github.elemecdn.com/jakearchibald/es6-promise/v3.0.2/dist/es6-promise.min.js"><\/script>');
       if (!window.fetch) document.write('<script src="//github.elemecdn.com/uglifyjs!github/fetch/v0.11.0/fetch.js"><\/script>'); 
     </script>
-    <script src="//github.elemecdn.com/uglifyjs!YanagiEiichi/reciper/0.1.3/index.es5.js"></script>
+    <script src="//github.elemecdn.com/uglifyjs!YanagiEiichi/reciper/0.1.5/index.es5.js"></script>
     <script>
-      fetch('package.json').then(function(response) { return response.json(); }).then(function(pkg) {
+      fetch('/open-crayfish/package.json').then(function(response) { return response.json(); }).then(function(pkg) {
+        console.log(pkg);
         var config = pkg.reciperConfig;
         config.name = pkg.name;
         config.description = pkg.description;

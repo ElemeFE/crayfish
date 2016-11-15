@@ -6,4 +6,5 @@ dist
 /fe.crayfish
 !.gitignore
 !.eslintrc
+!.babelrc
 /tempdata

@@ -13,7 +13,7 @@ class Button extends Jinkela {
       let result = this.onClick();
       if (typeof result.then === 'function') await result;
     } catch (error) {
-      console.error(error);
+      console.error(error); // eslint-disable-line no-console
       // Do nothing
     }
     this.element.classList.remove('busy');

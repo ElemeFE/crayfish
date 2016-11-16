@@ -10,7 +10,8 @@
     "home": "/crayfish/",
     "items": [
       { "text": "项目简介", "href": "/crayfish/intro/" },
-      { "text": "操作手册", "href": "/crayfish/manual/" }
+      { "text": "操作手册", "href": "/crayfish/manual/" },
+      { "text": "GitHub", "href": "https://github.com/ElemeFE/crayfish" }
     ]
   }
 }

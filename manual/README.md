@@ -1,8 +1,48 @@
+## 快速开始
+
+### 1. 依赖
+
+* Node Version: >= 5
+* MySQL Version: >= 5.6
+
+**注: MySQL 5.7 请关闭严格模式：<http://dev.mysql.com/doc/refman/5.7/en/sql-mode.html>。**
+
+### 2. 安装与运行
+
+首先为你的 MySQL 准备好一个 `crayfish` 数据库。可以在 `config.js` 和 `MAKEFILE` 中修改数据库。
+
+安装并启动后端，如果没有任何错误，则为运行成功：
+
+```shell
+cd backend
+make node_modules
+make init-database
+make run
+```
+
+Crayfish 的前端使用 [jinkela](https://github.com/YanagiEiichi/jinkela) 开发，并使用 [webspoon](https://github.com/ElemeFE/webspoon) 构建。
+
+启动前端，前端会被后端的 `koa-static` 中间件加载：
+
+```shell
+cd frontend
+make install
+make dev
+```
+
+之后访问：<http://localhost:8100> 即可看到运行成功的 Crayfish。
+
+如果需要在生产环境使用，在根目录 `make build` 即可。
+
 ## 日常操作
 
 ### 1. 进入 Crayfish 控制台
 
 所有的操作都在 Crayfish 控制台上完成的。考虑到每个公司都有一套自己的用户系统，因此开源版本并没有实现用户认证机制，默认是以超级管理员身份进入。
+
+在 `frontend/src/services/user.js` 中可以修改 `$user.SSOURL` 来控制接入的用户系统。
+
+在 `backend/users.js` 中 mock 了一份用户系统数据供系统调用和参考。
 
 ### 2. 数据列表
 
@@ -22,7 +62,7 @@
 
 ### 3. 数据的编辑与发布
 
-每条记录由 `Path`、`Name`、`Type`、`Value`、`Comment` 这三部分组成。
+每条记录由 `Path`、`Name`、`Type`、`Value`、`Comment` 这四部分组成。
 
 * `Path` 表示最终这些数据会在 CDN 上的哪个 URL Path。
 * `Name` 表示这条记录在程序中的引用名称。
@@ -48,7 +88,7 @@
 
 js 版本不是直接的 json，而是一个将 json 赋值给名为 `crayfish` 的全局变量的 js 文件。
 
-http://localhost:8100/test/a
+http://localhost:8100/test/a.crayfish
 
 ```js
 var crayfish = {
@@ -57,7 +97,7 @@ var crayfish = {
 };
 ```
 
-http://localhost:8100/test/b
+http://localhost:8100/test/b.crayfish
 
 ```js
 var crayfish = {
@@ -69,7 +109,7 @@ var crayfish = {
 
 如果想要直接使用 json，可以在域名后面加上 `@json`。
 
-http://localhost:8100/crayfish/test@json/a
+http://localhost:8100/crayfish/test@json/a.crayfish
 
 ```js
 {
@@ -78,7 +118,7 @@ http://localhost:8100/crayfish/test@json/a
 }
 ```
 
-http://localhost:8100/crayfish/test@json/b
+http://localhost:8100/crayfish/test@json/b.crayfish
 
 ```js
 {
@@ -146,28 +186,5 @@ http://localhost:8100/crayfish/<your-domain>/<your-path>.crayfish
 ### 2. 推送到 CDN
 
 在 backend/lib/publishProvider 目录下提供了 qiniu.js 的示例。
-
-## Contributing
-
-### dependencies
-
-MySQL 5.6
-
-Node 5
-
-### backend
-cd backend
-
-make init-database
-
-make run
-
-### frontend
-Crayfish 的前端使用 [jinkela](https://github.com/YanagiEiichi/jinkela) 开发，并使用 [webspoon](https://github.com/ElemeFE/webspoon) 构建
-
-cd frontend
-
-make dev
-
 
 

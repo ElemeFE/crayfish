@@ -14,6 +14,7 @@ default: help
 	@echo "$$ [35mmake lint[0m                       # check coding style"
 	@echo ""
 
+
 # require finite@~1.0.24
 include $(shell test -x "$$(which finite)" || sudo npm install finite -g > /dev/null; finite lib)
 
@@ -22,8 +23,6 @@ include $(shell test -x "$$(which finite)" || sudo npm install finite -g > /dev/
 ############################## Dependencies ##############################
 
 install: global-dependencies $(if $(fucking),cache-clean,) node_modules
-
-
 
 ############################## Unit Loader ##############################
 
